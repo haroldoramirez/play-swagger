@@ -4,9 +4,10 @@ import models.Aluno;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import static play.data.Form.form;
 
 import java.util.List;
+
+import static play.data.Form.form;
 
 public class AlunoController extends Controller {
     
@@ -43,7 +44,6 @@ public class AlunoController extends Controller {
         flash("sucesso","Aluno " + alterarForm.get().getNome() + " alterado com sucesso");
         return redirect(routes.AlunoController.lista());
     }
-
     public static Result buscaPorId(Long id) {
         return TODO;
     }
