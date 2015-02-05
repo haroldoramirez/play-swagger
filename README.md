@@ -10,6 +10,7 @@ Fazer testes com um projeto simples do play e adicionar o swagger.
 
 * Play Framework 2
 * Swagger 2.0
+
 * Utiliza Várias Dependências:
 
 	* jquery
