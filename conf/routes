@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# CRUD Aluno
+GET     /alunos/novo                  controllers.AlunoController.cria()
+GET     /alunos/:id                   controllers.AlunoController.detalha(id:Long)
+GET     /alunos                       controllers.AlunoController.lista()
+GET     /alunos/:id                   controllers.AlunoController.buscaPorId(id:Long)
+POST    /alunos/:id                   controllers.AlunoController.atualiza(id:Long)
+POST    /alunos/                      controllers.AlunoController.insere()
+POST    /alunos/:id/remover           controllers.AlunoController.remove(id:Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /webjars/*file              controllers.WebJarAssets.at(file)

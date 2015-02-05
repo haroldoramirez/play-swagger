@@ -1,0 +1,34 @@
+@(alunoForm : Form[Aluno])
+@main("Novo aluno") {
+<div class="container">
+    <br>
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="/">Home</a></li>
+        </ul>
+    </div>
+    <div>
+        @helper.form(action=routes.AlunoController.insere()) {
+        <form class="form-horizontal">
+            <br>
+            <fieldset>
+                <legend>Novo aluno</legend>
+                <div class="control-group">
+                    <div class="controls">
+                        @helper.inputText(alunoForm("nome"))
+                        @helper.inputText(alunoForm("email"))
+                        @helper.inputText(alunoForm("ra"))
+                    </div>
+                </div>
+                }
+                <div class="control-group">
+                    <label class="control-label" for="singlebutton"></label>
+                    <div class="controls">
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Gravar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+}

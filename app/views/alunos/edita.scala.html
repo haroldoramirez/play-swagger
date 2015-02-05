@@ -1,0 +1,28 @@
+@(id: Long, formAluno: Form[Aluno])
+
+@import helper._
+_
+@main("Alterar aluno") {
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="/">Home</a></li>
+        </ul>
+    </div>
+    <h1>Alterar Aluno</h1>
+    @form(routes.AlunoController.atualiza(id)) {
+    @inputText(formAluno("nome"))
+    @inputText(formAluno("email"))
+    @inputText(formAluno("ra"))
+    <div class="control-group">
+        <div class="actions">
+            <input type="submit" value="Gravar" class="btn btn-primary">
+            <a href="@routes.AlunoController.lista()" class="btn btn-primary ">Cancelar</a>
+            }
+            @form(routes.AlunoController.remove(id)) {
+            <input type="submit" value="Remover" class="btn danger">
+            }
+        </div>
+    </div>
+</div>
+}
