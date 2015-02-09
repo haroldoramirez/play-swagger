@@ -1,5 +1,7 @@
 package models;
 
+import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@ApiModel
 public class Aluno extends Model {
 
     private static final long serialVersionUID = 1L;
@@ -32,7 +35,8 @@ public class Aluno extends Model {
     public void setId(Long id) {
         this.id = id;
     }
-
+    
+    @ApiModelProperty(position = 1, required = true, value = "username containing only lowercase letters or numbers")
     public String getNome() {
         return nome;
     }
@@ -41,6 +45,7 @@ public class Aluno extends Model {
         this.nome = nome;
     }
 
+    @ApiModelProperty(position = 2, required = true)
     public String getRa() {
         return ra;
     }
@@ -49,6 +54,7 @@ public class Aluno extends Model {
         this.ra = ra;
     }
 
+    @ApiModelProperty(position = 3, required = true)
     public String getEmail() {
         return email;
     }
