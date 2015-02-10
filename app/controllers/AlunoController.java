@@ -29,7 +29,7 @@ public class AlunoController extends Controller {
     
     @Path("/aluno")
     @ApiOperation(value = "Insere Aluno no banco de dados", response = Boolean.class, httpMethod = "POST")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successful retrieval of user detail", response = Aluno.class),
             @ApiResponse(code = 404, message = "User with given username does not exist"),
@@ -48,7 +48,7 @@ public class AlunoController extends Controller {
 
     @Path("/aluno")
     @ApiOperation(value = "detalha aluno", response = Boolean.class, httpMethod = "GET")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public static Result detalha(Long id) {
         Form<Aluno> formAluno = form(Aluno.class).fill(Aluno.find.byId(id));
         return ok(views.html.alunos.edita.render(id,formAluno));
@@ -56,7 +56,7 @@ public class AlunoController extends Controller {
 
     @Path("/aluno")
     @ApiOperation(value = "atualiza os dados do aluno", response = Boolean.class, httpMethod = "POST")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public static Result atualiza(Long id) {
         form(Aluno.class).fill(Aluno.find.byId(id));
         
@@ -75,7 +75,7 @@ public class AlunoController extends Controller {
     @GET
     @Path("/aluno")
     @ApiOperation(value = "lista todos os alunos", response = Boolean.class, httpMethod = "GET")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public static Result lista() {
         List<Aluno> alunos = Aluno.find.findList();
         return ok(views.html.alunos.lista.render(alunos));
@@ -84,7 +84,7 @@ public class AlunoController extends Controller {
 
     @Path("/aluno")
     @ApiOperation(value = "Remove o aluno", response = Boolean.class, httpMethod = "POST")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public static Result remove(Long id) {
         try {
             Aluno.find.ref(id).delete();

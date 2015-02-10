@@ -10,20 +10,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+//@Entity
 @ApiModel
 public class Aluno extends Model {
 
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Constraints.Required
+    //@Constraints.Required
     private String nome;
     
-    @Constraints.Required
+    //@Constraints.Required
     private String ra;
 
     private String email;
