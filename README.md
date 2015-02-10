@@ -1,5 +1,7 @@
 # Play Framework with Swagger
 
+[![Build Status](https://travis-ci.org/haroldoramirez/play-swagger.svg?branch=master)](https://travis-ci.org/haroldoramirez/play-swagger)
+
 #### Version information
 PlayFramework 2.3.7 with Java8 64Bits.
 
