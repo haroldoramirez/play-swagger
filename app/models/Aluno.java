@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 import play.data.validation.Constraints;
@@ -10,22 +11,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//@Entity
-@ApiModel()
+@Entity
+@ApiModel(value = "Aluno", description = "Representação de Aluno")
 public class Aluno extends Model {
 
-    //private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //@Constraints.Required
+    @ApiModelProperty( value = "Nome do Aluno", required = true )
+    @Constraints.Required
     private String nome;
-    
-    //@Constraints.Required
+
+    @ApiModelProperty( value = "Registro Acadêmico", required = true )
+    @Constraints.Required
     private String ra;
 
+    @ApiModelProperty( value = "Email")
     private String email;
 
     public Long getId() {

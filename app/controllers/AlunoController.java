@@ -41,7 +41,7 @@ public class AlunoController extends Controller {
             return badRequest(views.html.alunos.novo.render(form));
         }
         Aluno aluno = form.get();
-        aluno.save();
+        //aluno.save();
         flash("sucesso","Registro gravado com sucesso");
         return redirect(routes.AlunoController.lista());
     }
@@ -64,7 +64,7 @@ public class AlunoController extends Controller {
         if (alterarForm.hasErrors()) {
             return badRequest(views.html.alunos.edita.render(id,alterarForm));
         }
-        alterarForm.get().update(id);
+        //alterarForm.get().update(id);
         flash("sucesso","Aluno " + alterarForm.get().getNome() + " alterado com sucesso");
         return redirect(routes.AlunoController.lista());
     }
@@ -87,7 +87,7 @@ public class AlunoController extends Controller {
     @Produces({MediaType.APPLICATION_JSON})
     public static Result remove(Long id) {
         try {
-            Aluno.find.ref(id).delete();
+            //Aluno.find.ref(id).delete();
             flash("sucesso", "Diretor removido com sucesso");
         } catch (Exception e) {
             flash("erro", play.i18n.Messages.get("global.erro"));
