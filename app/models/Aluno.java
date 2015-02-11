@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 //@Entity
-@ApiModel
+@ApiModel()
 public class Aluno extends Model {
 
     //private static final long serialVersionUID = 1L;

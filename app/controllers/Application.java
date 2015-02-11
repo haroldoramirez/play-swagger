@@ -22,13 +22,18 @@ public class Application extends Controller {
         return ok(index.render());
     }
 
-    @GET
-    @Path("/aplicacao/swagger")
-    @ApiOperation(value = "Return woot hopefully!", response = Boolean.class, httpMethod = "GET")
-    @ApiResponses(value = {@ApiResponse(code = Http.Status.BAD_REQUEST, message = "Invalid status value")})
-    @Produces({MediaType.APPLICATION_JSON})
+    //@GET
+    //@Path("/aplicacao/swagger")
+    //@ApiOperation(value = "Return woot hopefully!", response = Boolean.class, httpMethod = "GET")
+    //@ApiResponses(value = {@ApiResponse(code = Http.Status.BAD_REQUEST, message = "Invalid status value")})
+    //@Produces({MediaType.APPLICATION_JSON})
     public static Result swagger() {
-        return ok(views.html.swagger.render("swagger application"));
+        return ok(views.html.swagger.render());
+    }
+    
+    public static Result index2() {
+        return ok();
+        
     }
 
 }

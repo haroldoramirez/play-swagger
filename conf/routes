@@ -15,9 +15,9 @@ POST    /alunos/                      controllers.AlunoController.insere()
 POST    /alunos/:id/remover           controllers.AlunoController.remove(id:Long)
 
 # Swagger
-GET     /swagger                       controllers.Application.swagger()
-GET     /api-docs.json                  controllers.ApiHelpController.getResources
-#GET     /api-docs.json/aluno            controllers.ApiHelpController.getResources(path = "/aluno")
+GET     /swagger                      controllers.Application.swagger()
+GET    /api-docs.json/aluno           controllers.ApiHelpController.getResource(path = "/aluno")
+GET     /api-docs.json                controllers.ApiHelpController.getResources
 #GET    /aplicacao/swagger/:status     controllers.Application.swagger(status: String)
 
 # Map static resources from the /public folder to the /assets URL path
