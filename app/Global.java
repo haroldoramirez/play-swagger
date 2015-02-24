@@ -1,5 +1,5 @@
 import com.wordnik.swagger.converter.ModelConverters;
-import ignores.IgnoreConverter;
+import ignores.IgnoreConverterScala;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
@@ -9,8 +9,8 @@ public class Global extends GlobalSettings {
     @Override
     public void beforeStart(Application app) {
         Logger.info("Registering custom converter");
-        IgnoreConverter converter = new IgnoreConverter();
-        ModelConverters.addConverter(new IgnoreConverter(), true);
+        IgnoreConverterScala converterScala = new IgnoreConverterScala();
+        ModelConverters.addConverter(new IgnoreConverterScala(), true);
     }
 
     @Override
