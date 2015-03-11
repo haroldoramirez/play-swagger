@@ -10,7 +10,7 @@ public class Global extends GlobalSettings {
     @Override
     public void beforeStart(Application app) {
         Logger.info("Registering custom converter");
-        ModelConverters.addConverter(new CustomSwaggerModelConverter(), true);
+        ModelConverters.addConverter(new IgnoreConverterScala(), true);
     }
 
     @Override
